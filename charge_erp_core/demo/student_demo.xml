@@ -8,8 +8,11 @@
             <field name="last_name">Doe</field>
             <field name="name">John Doe</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-08-15</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_john_doe.png"/>
             <field name="email">john.doe@example.com</field>
+            <field name="phone">+1-555-0101</field>
+            <field name="mobile">+1-555-0102</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24001</field>
             <field name="registration_number">REG-CS24-001</field>
@@ -19,8 +22,11 @@
             <field name="last_name">Smith</field>
             <field name="name">Jane Smith</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-09-20</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_jane_smith.png"/>
             <field name="email">jane.smith@example.com</field>
+            <field name="phone">+1-555-0103</field>
+            <field name="mobile">+1-555-0104</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24002</field>
             <field name="registration_number">REG-CS24-002</field>
@@ -30,8 +36,11 @@
             <field name="last_name">Jones</field>
             <field name="name">Peter Jones</field>
             <field name="gender">male</field>
+            <field name="birth_date">2003-03-10</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_peter_jones.png"/>
             <field name="email">peter.jones@example.com</field>
+            <field name="phone">+1-555-0105</field>
+            <field name="mobile">+1-555-0106</field>
             <field name="batch_id" ref="demo_batch_cs_2023"/>
             <field name="roll_number">CS23001</field>
             <field name="registration_number">REG-CS23-001</field>
@@ -43,8 +52,11 @@
             <field name="last_name">White</field>
             <field name="name">Emily White</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-02-25</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_emily_white.png"/>
             <field name="email">emily.white@example.com</field>
+            <field name="phone">+1-555-0107</field>
+            <field name="mobile">+1-555-0108</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24001</field>
             <field name="registration_number">REG-DS24-001</field>
@@ -54,8 +66,11 @@
             <field name="last_name">Green</field>
             <field name="name">Michael Green</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-11-30</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_michael_green.png"/>
             <field name="email">michael.green@example.com</field>
+            <field name="phone">+1-555-0109</field>
+            <field name="mobile">+1-555-0110</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24002</field>
             <field name="registration_number">REG-DS24-002</field>
@@ -67,8 +82,11 @@
             <field name="last_name">Brown</field>
             <field name="name">Sarah Brown</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-07-12</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_sarah_brown.png"/>
             <field name="email">sarah.brown@example.com</field>
+            <field name="phone">+1-555-0111</field>
+            <field name="mobile">+1-555-0112</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24001</field>
             <field name="registration_number">REG-HIST24-001</field>
@@ -78,8 +96,11 @@
             <field name="last_name">Wilson</field>
             <field name="name">David Wilson</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-06-18</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_david_wilson.png"/>
             <field name="email">david.wilson@example.com</field>
+            <field name="phone">+1-555-0113</field>
+            <field name="mobile">+1-555-0114</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24002</field>
             <field name="registration_number">REG-HIST24-002</field>
@@ -91,8 +112,11 @@
             <field name="last_name">Taylor</field>
             <field name="name">Lisa Taylor</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-05-22</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_lisa_taylor.png"/>
             <field name="email">lisa.taylor@example.com</field>
+            <field name="phone">+1-555-0115</field>
+            <field name="mobile">+1-555-0116</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24001</field>
             <field name="registration_number">REG-PHY24-001</field>
@@ -102,8 +126,11 @@
             <field name="last_name">Anderson</field>
             <field name="name">James Anderson</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-01-01</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_james_anderson.png"/>
             <field name="email">james.anderson@example.com</field>
+            <field name="phone">+1-555-0117</field>
+            <field name="mobile">+1-555-0118</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24002</field>
             <field name="registration_number">REG-PHY24-002</field>
@@ -113,21 +140,27 @@
             <field name="last_name">Thomas</field>
             <field name="name">Olivia Thomas</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-10-05</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_olivia_thomas.png"/>
             <field name="email">olivia.thomas@example.com</field>
+            <field name="phone">+1-555-0119</field>
+            <field name="mobile">+1-555-0120</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24003</field>
             <field name="registration_number">REG-PHY24-003</field>
         </record>
 
-        <!-- Add more students to reach 15-20 -->
+        <!-- Additional Students -->
         <record id="demo_student_chris_lee" model="op.student">
             <field name="first_name">Chris</field>
             <field name="last_name">Lee</field>
             <field name="name">Chris Lee</field>
             <field name="gender">male</field>
-            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_chris_lee.png"/>
+            <field name="birth_date">2004-04-14</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_john_doe.png"/>
             <field name="email">chris.lee@example.com</field>
+            <field name="phone">+1-555-0121</field>
+            <field name="mobile">+1-555-0122</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24003</field>
             <field name="registration_number">REG-CS24-003</field>
@@ -137,8 +170,11 @@
             <field name="last_name">Harris</field>
             <field name="name">Patricia Harris</field>
             <field name="gender">female</field>
-            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_patricia_harris.png"/>
+            <field name="birth_date">2004-03-28</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_jane_smith.png"/>
             <field name="email">patricia.harris@example.com</field>
+            <field name="phone">+1-555-0123</field>
+            <field name="mobile">+1-555-0124</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24004</field>
             <field name="registration_number">REG-CS24-004</field>
@@ -148,8 +184,11 @@
             <field name="last_name">Clark</field>
             <field name="name">Robert Clark</field>
             <field name="gender">male</field>
-            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_robert_clark.png"/>
+            <field name="birth_date">2004-02-19</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_peter_jones.png"/>
             <field name="email">robert.clark@example.com</field>
+            <field name="phone">+1-555-0125</field>
+            <field name="mobile">+1-555-0126</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24003</field>
             <field name="registration_number">REG-HIST24-003</field>
@@ -159,8 +198,11 @@
             <field name="last_name">Lewis</field>
             <field name="name">Linda Lewis</field>
             <field name="gender">female</field>
-            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_linda_lewis.png"/>
+            <field name="birth_date">2004-12-01</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_emily_white.png"/>
             <field name="email">linda.lewis@example.com</field>
+            <field name="phone">+1-555-0127</field>
+            <field name="mobile">+1-555-0128</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24004</field>
             <field name="registration_number">REG-PHY24-004</field>
@@ -170,20 +212,25 @@
             <field name="last_name">Walker</field>
             <field name="name">Mark Walker</field>
             <field name="gender">male</field>
-            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_mark_walker.png"/>
+            <field name="birth_date">2003-11-11</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_michael_green.png"/>
             <field name="email">mark.walker@example.com</field>
+            <field name="phone">+1-555-0129</field>
+            <field name="mobile">+1-555-0130</field>
             <field name="batch_id" ref="demo_batch_cs_2023"/>
             <field name="roll_number">CS23002</field>
             <field name="registration_number">REG-CS23-002</field>
         </record>
-
-        <!-- Add 5 more students -->
         <record id="demo_student_susan_young" model="op.student">
             <field name="first_name">Susan</field>
             <field name="last_name">Young</field>
             <field name="name">Susan Young</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-10-10</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_sarah_brown.png"/>
             <field name="email">susan.young@example.com</field>
+            <field name="phone">+1-555-0131</field>
+            <field name="mobile">+1-555-0132</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24003</field>
             <field name="registration_number">REG-DS24-003</field>
@@ -193,7 +240,11 @@
             <field name="last_name">King</field>
             <field name="name">Jason King</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-09-09</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_david_wilson.png"/>
             <field name="email">jason.king@example.com</field>
+            <field name="phone">+1-555-0133</field>
+            <field name="mobile">+1-555-0134</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24004</field>
             <field name="registration_number">REG-DS24-004</field>
@@ -203,7 +254,11 @@
             <field name="last_name">Wright</field>
             <field name="name">Betty Wright</field>
             <field name="gender">female</field>
+            <field name="birth_date">2004-08-08</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_lisa_taylor.png"/>
             <field name="email">betty.wright@example.com</field>
+            <field name="phone">+1-555-0135</field>
+            <field name="mobile">+1-555-0136</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24004</field>
             <field name="registration_number">REG-HIST24-004</field>
@@ -213,7 +268,11 @@
             <field name="last_name">Scott</field>
             <field name="name">Steven Scott</field>
             <field name="gender">male</field>
+            <field name="birth_date">2004-07-07</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_james_anderson.png"/>
             <field name="email">steven.scott@example.com</field>
+            <field name="phone">+1-555-0137</field>
+            <field name="mobile">+1-555-0138</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24005</field>
             <field name="registration_number">REG-PHY24-005</field>
@@ -223,7 +282,11 @@
             <field name="last_name">Green</field>
             <field name="name">Nancy Green</field>
             <field name="gender">female</field>
+            <field name="birth_date">2003-06-06</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_olivia_thomas.png"/>
             <field name="email">nancy.green@example.com</field>
+            <field name="phone">+1-555-0139</field>
+            <field name="mobile">+1-555-0140</field>
             <field name="batch_id" ref="demo_batch_cs_2023"/>
             <field name="roll_number">CS23003</field>
             <field name="registration_number">REG-CS23-003</field>

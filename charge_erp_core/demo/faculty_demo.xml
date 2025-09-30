@@ -10,6 +10,11 @@
             <field name="gender">male</field>
             <field name="birth_date">1912-06-23</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_alan_turing.png"/>
+            <field name="email">alan.turing@example.com</field>
+            <field name="phone">+1-202-555-0173</field>
+            <field name="mobile">+1-202-555-0191</field>
+            <field name="highest_qualification">Ph.D. in Mathematics</field>
+            <field name="specialization">Computer Science, Cryptanalysis</field>
             <field name="department_id" ref="demo_department_cs"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_cs101'), ref('demo_subject_cs201')])]"/>
         </record>
@@ -19,8 +24,13 @@
             <field name="last_name">Lovelace</field>
             <field name="name">Ada Lovelace</field>
             <field name="gender">female</field>
-            <field name="birth_date">1975-12-10</field>
+            <field name="birth_date">1815-12-10</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_ada_lovelace.png"/>
+            <field name="email">ada.lovelace@example.com</field>
+            <field name="phone">+1-202-555-0182</field>
+            <field name="mobile">+1-202-555-0183</field>
+            <field name="highest_qualification">Countess of Lovelace</field>
+            <field name="specialization">Analytical Engine, Programming</field>
             <field name="department_id" ref="demo_department_cs"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_ds501')])]"/>
         </record>
@@ -32,6 +42,11 @@
             <field name="gender">male</field>
             <field name="birth_date">1968-01-15</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_herodotus.png"/>
+            <field name="email">herodotus@example.com</field>
+            <field name="phone">+1-310-555-0149</field>
+            <field name="mobile">+1-310-555-0150</field>
+            <field name="highest_qualification">Historian</field>
+            <field name="specialization">Greco-Persian Wars</field>
             <field name="department_id" ref="demo_department_humanities"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_hist101'), ref('demo_subject_hist202')])]"/>
         </record>
@@ -41,8 +56,13 @@
             <field name="last_name">Curie</field>
             <field name="name">Marie Curie</field>
             <field name="gender">female</field>
-            <field name="birth_date">1967-11-07</field>
+            <field name="birth_date">1867-11-07</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_marie_curie.png"/>
+            <field name="email">marie.curie@example.com</field>
+            <field name="phone">+1-415-555-0155</field>
+            <field name="mobile">+1-415-555-0156</field>
+            <field name="highest_qualification">Nobel Prize in Physics &amp; Chemistry</field>
+            <field name="specialization">Radioactivity</field>
             <field name="department_id" ref="demo_department_science"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_phy101')])]"/>
         </record>
@@ -52,37 +72,61 @@
             <field name="last_name">Franklin</field>
             <field name="name">Rosalind Franklin</field>
             <field name="gender">female</field>
-            <field name="birth_date">1970-07-25</field>
+            <field name="birth_date">1920-07-25</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_rosalind_franklin.png"/>
+            <field name="email">rosalind.franklin@example.com</field>
+            <field name="phone">+1-415-555-0123</field>
+            <field name="mobile">+1-415-555-0124</field>
+            <field name="highest_qualification">Ph.D. in Physical Chemistry</field>
+            <field name="specialization">X-ray crystallography, DNA structure</field>
             <field name="department_id" ref="demo_department_science"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_chem101')])]"/>
         </record>
 
-        <!-- Add 3 more faculty members -->
         <record id="demo_faculty_carl_sagan" model="op.faculty">
             <field name="first_name">Carl</field>
             <field name="last_name">Sagan</field>
             <field name="name">Carl Sagan</field>
             <field name="gender">male</field>
             <field name="birth_date">1934-11-09</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_herodotus.png"/>
+            <field name="email">carl.sagan@example.com</field>
+            <field name="phone">+1-510-555-0188</field>
+            <field name="mobile">+1-510-555-0189</field>
+            <field name="highest_qualification">Ph.D. in Astronomy and Astrophysics</field>
+            <field name="specialization">Cosmology, Exobiology</field>
             <field name="department_id" ref="demo_department_science"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_phy101'), ref('demo_subject_astr101')])]"/>
         </record>
+
         <record id="demo_faculty_grace_hopper" model="op.faculty">
             <field name="first_name">Grace</field>
             <field name="last_name">Hopper</field>
             <field name="name">Grace Hopper</field>
             <field name="gender">female</field>
             <field name="birth_date">1906-12-09</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_ada_lovelace.png"/>
+            <field name="email">grace.hopper@example.com</field>
+            <field name="phone">+1-202-555-0111</field>
+            <field name="mobile">+1-202-555-0112</field>
+            <field name="highest_qualification">Ph.D. in Mathematics</field>
+            <field name="specialization">Computer Programming, COBOL</field>
             <field name="department_id" ref="demo_department_cs"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_cs101'), ref('demo_subject_cs201')])]"/>
         </record>
+
         <record id="demo_faculty_thucydides" model="op.faculty">
             <field name="first_name">Thucydides</field>
             <field name="last_name">of Athens</field>
             <field name="name">Thucydides of Athens</field>
             <field name="gender">male</field>
             <field name="birth_date">1954-04-20</field>
+            <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_alan_turing.png"/>
+            <field name="email">thucydides@example.com</field>
+            <field name="phone">+1-310-555-0199</field>
+            <field name="mobile">+1-310-555-0198</field>
+            <field name="highest_qualification">General of Athens</field>
+            <field name="specialization">History of the Peloponnesian War</field>
             <field name="department_id" ref="demo_department_humanities"/>
             <field name="subject_ids" eval="[(6, 0, [ref('demo_subject_hist101')])]"/>
         </record>
