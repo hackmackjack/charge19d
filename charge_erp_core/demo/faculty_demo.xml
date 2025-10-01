@@ -8,16 +8,18 @@
             <field name="email">aturing@school.demo</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_alan_turing.png"/>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Alan Turing',
-            'partner_id': ref('partner_faculty_alan_turing'),
-            'login': 'aturing',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_alan_turing" model="res.users">
+            <field name="name">Alan Turing</field>
+            <field name="partner_id" ref="partner_faculty_alan_turing"/>
+            <field name="login">aturing</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_alan_turing" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_alan_turing" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_alan_turing"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'aturing')]"/>
+            <field name="user_id" ref="user_faculty_alan_turing"/>
             <field name="first_name">Alan</field>
             <field name="last_name">Turing</field>
             <field name="gender">male</field>
@@ -32,16 +34,18 @@
             <field name="email">alovelace@school.demo</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_ada_lovelace.png"/>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Ada Lovelace',
-            'partner_id': ref('partner_faculty_ada_lovelace'),
-            'login': 'alovelace',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_ada_lovelace" model="res.users">
+            <field name="name">Ada Lovelace</field>
+            <field name="partner_id" ref="partner_faculty_ada_lovelace"/>
+            <field name="login">alovelace</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_ada_lovelace" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_ada_lovelace" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_ada_lovelace"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'alovelace')]"/>
+            <field name="user_id" ref="user_faculty_ada_lovelace"/>
             <field name="first_name">Ada</field>
             <field name="last_name">Lovelace</field>
             <field name="gender">female</field>
@@ -56,16 +60,18 @@
             <field name="email">hhalicarnassus@school.demo</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_herodotus.png"/>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Herodotus Halicarnassus',
-            'partner_id': ref('partner_faculty_herodotus'),
-            'login': 'hhalicarnassus',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_herodotus" model="res.users">
+            <field name="name">Herodotus Halicarnassus</field>
+            <field name="partner_id" ref="partner_faculty_herodotus"/>
+            <field name="login">hhalicarnassus</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_herodotus" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_herodotus" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_herodotus"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'hhalicarnassus')]"/>
+            <field name="user_id" ref="user_faculty_herodotus"/>
             <field name="first_name">Herodotus</field>
             <field name="last_name">Halicarnassus</field>
             <field name="gender">male</field>
@@ -80,16 +86,18 @@
             <field name="email">mcurie@school.demo</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_marie_curie.png"/>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Marie Curie',
-            'partner_id': ref('partner_faculty_marie_curie'),
-            'login': 'mcurie',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_marie_curie" model="res.users">
+            <field name="name">Marie Curie</field>
+            <field name="partner_id" ref="partner_faculty_marie_curie"/>
+            <field name="login">mcurie</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_marie_curie" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_marie_curie" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_marie_curie"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'mcurie')]"/>
+            <field name="user_id" ref="user_faculty_marie_curie"/>
             <field name="first_name">Marie</field>
             <field name="last_name">Curie</field>
             <field name="gender">female</field>
@@ -104,16 +112,18 @@
             <field name="email">rfranklin@school.demo</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/faculty_rosalind_franklin.png"/>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Rosalind Franklin',
-            'partner_id': ref('partner_faculty_rosalind_franklin'),
-            'login': 'rfranklin',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_rosalind_franklin" model="res.users">
+            <field name="name">Rosalind Franklin</field>
+            <field name="partner_id" ref="partner_faculty_rosalind_franklin"/>
+            <field name="login">rfranklin</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_rosalind_franklin" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_rosalind_franklin" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_rosalind_franklin"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'rfranklin')]"/>
+            <field name="user_id" ref="user_faculty_rosalind_franklin"/>
             <field name="first_name">Rosalind</field>
             <field name="last_name">Franklin</field>
             <field name="gender">female</field>
@@ -127,16 +137,18 @@
             <field name="name">Carl Sagan</field>
             <field name="email">csagan@school.demo</field>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Carl Sagan',
-            'partner_id': ref('partner_faculty_carl_sagan'),
-            'login': 'csagan',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_carl_sagan" model="res.users">
+            <field name="name">Carl Sagan</field>
+            <field name="partner_id" ref="partner_faculty_carl_sagan"/>
+            <field name="login">csagan</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_carl_sagan" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_carl_sagan" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_carl_sagan"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'csagan')]"/>
+            <field name="user_id" ref="user_faculty_carl_sagan"/>
             <field name="first_name">Carl</field>
             <field name="last_name">Sagan</field>
             <field name="gender">male</field>
@@ -150,16 +162,18 @@
             <field name="name">Grace Hopper</field>
             <field name="email">ghopper@school.demo</field>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Grace Hopper',
-            'partner_id': ref('partner_faculty_grace_hopper'),
-            'login': 'ghopper',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_grace_hopper" model="res.users">
+            <field name="name">Grace Hopper</field>
+            <field name="partner_id" ref="partner_faculty_grace_hopper"/>
+            <field name="login">ghopper</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_grace_hopper" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_grace_hopper" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_grace_hopper"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'ghopper')]"/>
+            <field name="user_id" ref="user_faculty_grace_hopper"/>
             <field name="first_name">Grace</field>
             <field name="last_name">Hopper</field>
             <field name="gender">female</field>
@@ -173,16 +187,18 @@
             <field name="name">Thucydides of Athens</field>
             <field name="email">tathens@school.demo</field>
         </record>
-        <function model="res.users" name="create" eval="[{
-            'name': 'Thucydides of Athens',
-            'partner_id': ref('partner_faculty_thucydides'),
-            'login': 'tathens',
-            'password': 'demo',
-            'groups_id': [(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])],
-        }]" context="{'no_reset_password': True}"/>
+        <record id="user_faculty_thucydides" model="res.users">
+            <field name="name">Thucydides of Athens</field>
+            <field name="partner_id" ref="partner_faculty_thucydides"/>
+            <field name="login">tathens</field>
+            <field name="password">demo</field>
+        </record>
+        <record id="user_faculty_thucydides" model="res.users">
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('charge_erp_core.group_op_faculty')])]"/>
+        </record>
         <record id="demo_faculty_thucydides" model="op.faculty">
             <field name="partner_id" ref="partner_faculty_thucydides"/>
-            <field name="user_id" model="res.users" search="[('login', '=', 'tathens')]"/>
+            <field name="user_id" ref="user_faculty_thucydides"/>
             <field name="first_name">Thucydides</field>
             <field name="last_name">of Athens</field>
             <field name="gender">male</field>
