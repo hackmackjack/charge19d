@@ -15,9 +15,10 @@
             <field name="partner_id" ref="partner_student_john_doe"/>
             <field name="login">johndoe</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_john_doe" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_john_doe" model="op.student">
             <field name="partner_id" ref="partner_student_john_doe"/>
@@ -41,9 +42,10 @@
             <field name="partner_id" ref="partner_student_jane_smith"/>
             <field name="login">janesmith</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_jane_smith" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_jane_smith" model="op.student">
             <field name="partner_id" ref="partner_student_jane_smith"/>
@@ -67,9 +69,10 @@
             <field name="partner_id" ref="partner_student_peter_jones"/>
             <field name="login">peterjones</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_peter_jones" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_peter_jones" model="op.student">
             <field name="partner_id" ref="partner_student_peter_jones"/>
@@ -93,9 +96,10 @@
             <field name="partner_id" ref="partner_student_emily_white"/>
             <field name="login">emilywhite</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_emily_white" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_emily_white" model="op.student">
             <field name="partner_id" ref="partner_student_emily_white"/>
@@ -119,9 +123,10 @@
             <field name="partner_id" ref="partner_student_michael_green"/>
             <field name="login">michaelgreen</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_michael_green" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_michael_green" model="op.student">
             <field name="partner_id" ref="partner_student_michael_green"/>
@@ -145,9 +150,10 @@
             <field name="partner_id" ref="partner_student_sarah_brown"/>
             <field name="login">sarahbrown</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_sarah_brown" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_sarah_brown" model="op.student">
             <field name="partner_id" ref="partner_student_sarah_brown"/>
@@ -171,9 +177,10 @@
             <field name="partner_id" ref="partner_student_david_wilson"/>
             <field name="login">davidwilson</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_david_wilson" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_david_wilson" model="op.student">
             <field name="partner_id" ref="partner_student_david_wilson"/>
@@ -197,9 +204,10 @@
             <field name="partner_id" ref="partner_student_lisa_taylor"/>
             <field name="login">lisataylor</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_lisa_taylor" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_lisa_taylor" model="op.student">
             <field name="partner_id" ref="partner_student_lisa_taylor"/>
@@ -223,9 +231,10 @@
             <field name="partner_id" ref="partner_student_james_anderson"/>
             <field name="login">jamesanderson</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_james_anderson" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_james_anderson" model="op.student">
             <field name="partner_id" ref="partner_student_james_anderson"/>
@@ -249,9 +258,10 @@
             <field name="partner_id" ref="partner_student_olivia_thomas"/>
             <field name="login">oliviathomas</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_olivia_thomas" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_olivia_thomas" model="op.student">
             <field name="partner_id" ref="partner_student_olivia_thomas"/>
@@ -275,9 +285,10 @@
             <field name="partner_id" ref="partner_student_chris_lee"/>
             <field name="login">chrislee</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_chris_lee" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_chris_lee" model="op.student">
             <field name="partner_id" ref="partner_student_chris_lee"/>
@@ -301,9 +312,10 @@
             <field name="partner_id" ref="partner_student_patricia_harris"/>
             <field name="login">patriciaharris</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_patricia_harris" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_patricia_harris" model="op.student">
             <field name="partner_id" ref="partner_student_patricia_harris"/>
@@ -327,9 +339,10 @@
             <field name="partner_id" ref="partner_student_mark_walker"/>
             <field name="login">markwalker</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_mark_walker" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_mark_walker" model="op.student">
             <field name="partner_id" ref="partner_student_mark_walker"/>
@@ -353,9 +366,10 @@
             <field name="partner_id" ref="partner_student_robert_clark"/>
             <field name="login">robertclark</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_robert_clark" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_robert_clark" model="op.student">
             <field name="partner_id" ref="partner_student_robert_clark"/>
@@ -379,9 +393,10 @@
             <field name="partner_id" ref="partner_student_linda_lewis"/>
             <field name="login">lindalewis</field>
             <field name="password">demo</field>
+            <field name="share" eval="True"/>
         </record>
         <record id="user_student_linda_lewis" model="res.users">
-            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])]"/>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_portal')])]"/>
         </record>
         <record id="demo_student_linda_lewis" model="op.student">
             <field name="partner_id" ref="partner_student_linda_lewis"/>
