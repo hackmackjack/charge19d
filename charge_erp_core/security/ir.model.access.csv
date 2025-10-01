@@ -29,7 +29,7 @@ access_op_session_student,access.op.session.student,model_op_session,charge_erp_
 access_op_attendee_wizard_student,access.op.attendee.wizard.student,model_op_attendee_wizard,charge_erp_core.group_op_student,1,0,0,0
 access_op_category_student,access.op.category.student,model_op_category,charge_erp_core.group_op_student,1,0,0,0
 access_op_course_enrollment_student,access.op.course.enrollment.student,model_op_course_enrollment,charge_erp_core.group_op_student,1,0,0,0
-access_op_student_faculty,access.op.student.faculty,model_op_student,charge_erp_core.group_op_faculty,1,1,0,0
+access_op_student_faculty,access.op.student.faculty,model_op_student,charge_erp_core.group_op_faculty,1,0,0,0
 access_op_course_faculty,access.op.course.faculty,model_op_course,charge_erp_core.group_op_faculty,1,0,0,0
 access_op_faculty_faculty,access.op.faculty.faculty,model_op_faculty,charge_erp_core.group_op_faculty,1,1,0,0
 access_op_subject_faculty,access.op.subject.faculty,model_op_subject,charge_erp_core.group_op_faculty,1,0,0,0
