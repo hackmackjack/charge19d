@@ -10,16 +10,16 @@
             <field name="email">john.doe@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_john_doe.png"/>
         </record>
-        <record id="user_student_john_doe" model="res.users">
-            <field name="name">John Doe</field>
-            <field name="partner_id" ref="partner_student_john_doe"/>
-            <field name="login">johndoe</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'John Doe',
+            'partner_id': ref('partner_student_john_doe'),
+            'login': 'johndoe',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_john_doe" model="op.student">
             <field name="partner_id" ref="partner_student_john_doe"/>
-            <field name="user_id" ref="user_student_john_doe"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'johndoe')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24001</field>
@@ -34,16 +34,16 @@
             <field name="email">jane.smith@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_jane_smith.png"/>
         </record>
-        <record id="user_student_jane_smith" model="res.users">
-            <field name="name">Jane Smith</field>
-            <field name="partner_id" ref="partner_student_jane_smith"/>
-            <field name="login">janesmith</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Jane Smith',
+            'partner_id': ref('partner_student_jane_smith'),
+            'login': 'janesmith',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_jane_smith" model="op.student">
             <field name="partner_id" ref="partner_student_jane_smith"/>
-            <field name="user_id" ref="user_student_jane_smith"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'janesmith')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24002</field>
@@ -58,16 +58,16 @@
             <field name="email">peter.jones@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_peter_jones.png"/>
         </record>
-        <record id="user_student_peter_jones" model="res.users">
-            <field name="name">Peter Jones</field>
-            <field name="partner_id" ref="partner_student_peter_jones"/>
-            <field name="login">peterjones</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Peter Jones',
+            'partner_id': ref('partner_student_peter_jones'),
+            'login': 'peterjones',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_peter_jones" model="op.student">
             <field name="partner_id" ref="partner_student_peter_jones"/>
-            <field name="user_id" ref="user_student_peter_jones"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'peterjones')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_cs_2023"/>
             <field name="roll_number">CS23001</field>
@@ -82,16 +82,16 @@
             <field name="email">emily.white@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_emily_white.png"/>
         </record>
-        <record id="user_student_emily_white" model="res.users">
-            <field name="name">Emily White</field>
-            <field name="partner_id" ref="partner_student_emily_white"/>
-            <field name="login">emilywhite</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Emily White',
+            'partner_id': ref('partner_student_emily_white'),
+            'login': 'emilywhite',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_emily_white" model="op.student">
             <field name="partner_id" ref="partner_student_emily_white"/>
-            <field name="user_id" ref="user_student_emily_white"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'emilywhite')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24001</field>
@@ -106,16 +106,16 @@
             <field name="email">michael.green@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_michael_green.png"/>
         </record>
-        <record id="user_student_michael_green" model="res.users">
-            <field name="name">Michael Green</field>
-            <field name="partner_id" ref="partner_student_michael_green"/>
-            <field name="login">michaelgreen</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Michael Green',
+            'partner_id': ref('partner_student_michael_green'),
+            'login': 'michaelgreen',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_michael_green" model="op.student">
             <field name="partner_id" ref="partner_student_michael_green"/>
-            <field name="user_id" ref="user_student_michael_green"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'michaelgreen')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_ds_2024"/>
             <field name="roll_number">DS24002</field>
@@ -130,16 +130,16 @@
             <field name="email">sarah.brown@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_sarah_brown.png"/>
         </record>
-        <record id="user_student_sarah_brown" model="res.users">
-            <field name="name">Sarah Brown</field>
-            <field name="partner_id" ref="partner_student_sarah_brown"/>
-            <field name="login">sarahbrown</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Sarah Brown',
+            'partner_id': ref('partner_student_sarah_brown'),
+            'login': 'sarahbrown',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_sarah_brown" model="op.student">
             <field name="partner_id" ref="partner_student_sarah_brown"/>
-            <field name="user_id" ref="user_student_sarah_brown"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'sarahbrown')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24001</field>
@@ -154,16 +154,16 @@
             <field name="email">david.wilson@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_david_wilson.png"/>
         </record>
-        <record id="user_student_david_wilson" model="res.users">
-            <field name="name">David Wilson</field>
-            <field name="partner_id" ref="partner_student_david_wilson"/>
-            <field name="login">davidwilson</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'David Wilson',
+            'partner_id': ref('partner_student_david_wilson'),
+            'login': 'davidwilson',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_david_wilson" model="op.student">
             <field name="partner_id" ref="partner_student_david_wilson"/>
-            <field name="user_id" ref="user_student_david_wilson"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'davidwilson')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24002</field>
@@ -178,16 +178,16 @@
             <field name="email">lisa.taylor@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_lisa_taylor.png"/>
         </record>
-        <record id="user_student_lisa_taylor" model="res.users">
-            <field name="name">Lisa Taylor</field>
-            <field name="partner_id" ref="partner_student_lisa_taylor"/>
-            <field name="login">lisataylor</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Lisa Taylor',
+            'partner_id': ref('partner_student_lisa_taylor'),
+            'login': 'lisataylor',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_lisa_taylor" model="op.student">
             <field name="partner_id" ref="partner_student_lisa_taylor"/>
-            <field name="user_id" ref="user_student_lisa_taylor"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'lisataylor')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24001</field>
@@ -202,16 +202,16 @@
             <field name="email">james.anderson@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_james_anderson.png"/>
         </record>
-        <record id="user_student_james_anderson" model="res.users">
-            <field name="name">James Anderson</field>
-            <field name="partner_id" ref="partner_student_james_anderson"/>
-            <field name="login">jamesanderson</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'James Anderson',
+            'partner_id': ref('partner_student_james_anderson'),
+            'login': 'jamesanderson',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_james_anderson" model="op.student">
             <field name="partner_id" ref="partner_student_james_anderson"/>
-            <field name="user_id" ref="user_student_james_anderson"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'jamesanderson')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24002</field>
@@ -226,16 +226,16 @@
             <field name="email">olivia.thomas@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_olivia_thomas.png"/>
         </record>
-        <record id="user_student_olivia_thomas" model="res.users">
-            <field name="name">Olivia Thomas</field>
-            <field name="partner_id" ref="partner_student_olivia_thomas"/>
-            <field name="login">oliviathomas</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Olivia Thomas',
+            'partner_id': ref('partner_student_olivia_thomas'),
+            'login': 'oliviathomas',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_olivia_thomas" model="op.student">
             <field name="partner_id" ref="partner_student_olivia_thomas"/>
-            <field name="user_id" ref="user_student_olivia_thomas"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'oliviathomas')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24003</field>
@@ -250,16 +250,16 @@
             <field name="email">chris.lee@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_chris_lee.png"/>
         </record>
-        <record id="user_student_chris_lee" model="res.users">
-            <field name="name">Chris Lee</field>
-            <field name="partner_id" ref="partner_student_chris_lee"/>
-            <field name="login">chrislee</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Chris Lee',
+            'partner_id': ref('partner_student_chris_lee'),
+            'login': 'chrislee',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_chris_lee" model="op.student">
             <field name="partner_id" ref="partner_student_chris_lee"/>
-            <field name="user_id" ref="user_student_chris_lee"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'chrislee')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24003</field>
@@ -274,16 +274,16 @@
             <field name="email">patricia.harris@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_patricia_harris.png"/>
         </record>
-        <record id="user_student_patricia_harris" model="res.users">
-            <field name="name">Patricia Harris</field>
-            <field name="partner_id" ref="partner_student_patricia_harris"/>
-            <field name="login">patriciaharris</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Patricia Harris',
+            'partner_id': ref('partner_student_patricia_harris'),
+            'login': 'patriciaharris',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_patricia_harris" model="op.student">
             <field name="partner_id" ref="partner_student_patricia_harris"/>
-            <field name="user_id" ref="user_student_patricia_harris"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'patriciaharris')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_cs_2024"/>
             <field name="roll_number">CS24004</field>
@@ -298,16 +298,16 @@
             <field name="email">mark.walker@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_mark_walker.png"/>
         </record>
-        <record id="user_student_mark_walker" model="res.users">
-            <field name="name">Mark Walker</field>
-            <field name="partner_id" ref="partner_student_mark_walker"/>
-            <field name="login">markwalker</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Mark Walker',
+            'partner_id': ref('partner_student_mark_walker'),
+            'login': 'markwalker',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_mark_walker" model="op.student">
             <field name="partner_id" ref="partner_student_mark_walker"/>
-            <field name="user_id" ref="user_student_mark_walker"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'markwalker')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_cs_2023"/>
             <field name="roll_number">CS23002</field>
@@ -322,16 +322,16 @@
             <field name="email">robert.clark@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_robert_clark.png"/>
         </record>
-        <record id="user_student_robert_clark" model="res.users">
-            <field name="name">Robert Clark</field>
-            <field name="partner_id" ref="partner_student_robert_clark"/>
-            <field name="login">robertclark</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Robert Clark',
+            'partner_id': ref('partner_student_robert_clark'),
+            'login': 'robertclark',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_robert_clark" model="op.student">
             <field name="partner_id" ref="partner_student_robert_clark"/>
-            <field name="user_id" ref="user_student_robert_clark"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'robertclark')]"/>
             <field name="gender">male</field>
             <field name="batch_id" ref="demo_batch_hist_2024"/>
             <field name="roll_number">HIST24003</field>
@@ -346,41 +346,20 @@
             <field name="email">linda.lewis@example.com</field>
             <field name="image_1920" type="base64" file="charge_erp_core/static/img/student_linda_lewis.png"/>
         </record>
-        <record id="user_student_linda_lewis" model="res.users">
-            <field name="name">Linda Lewis</field>
-            <field name="partner_id" ref="partner_student_linda_lewis"/>
-            <field name="login">lindalewis</field>
-            <field name="password">demo</field>
-            <field name="share" eval="True"/>
-        </record>
+        <function model="res.users" name="create" eval="[{
+            'name': 'Linda Lewis',
+            'partner_id': ref('partner_student_linda_lewis'),
+            'login': 'lindalewis',
+            'password': 'demo',
+            'groups_id': [(6, 0, [ref('base.group_portal'), ref('charge_erp_core.group_op_student')])],
+        }]" context="{'no_reset_password': True}"/>
         <record id="demo_student_linda_lewis" model="op.student">
             <field name="partner_id" ref="partner_student_linda_lewis"/>
-            <field name="user_id" ref="user_student_linda_lewis"/>
+            <field name="user_id" model="res.users" search="[('login', '=', 'lindalewis')]"/>
             <field name="gender">female</field>
             <field name="batch_id" ref="demo_batch_phy_2024"/>
             <field name="roll_number">PHY24004</field>
             <field name="registration_number">REG-PHY24-004</field>
-        </record>
-
-        <!-- Add all demo students to the Student group -->
-        <record id="charge_erp_core.group_op_student" model="res.groups">
-            <field name="user_ids" eval="[(6, 0, [
-                ref('user_student_john_doe'),
-                ref('user_student_jane_smith'),
-                ref('user_student_peter_jones'),
-                ref('user_student_emily_white'),
-                ref('user_student_michael_green'),
-                ref('user_student_sarah_brown'),
-                ref('user_student_david_wilson'),
-                ref('user_student_lisa_taylor'),
-                ref('user_student_james_anderson'),
-                ref('user_student_olivia_thomas'),
-                ref('user_student_chris_lee'),
-                ref('user_student_patricia_harris'),
-                ref('user_student_mark_walker'),
-                ref('user_student_robert_clark'),
-                ref('user_student_linda_lewis')
-            ])]"/>
         </record>
 
     </data>
