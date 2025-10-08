@@ -46,6 +46,7 @@
                                 <div class="card-body">
                                     <p class="mb-2"><strong>Program:</strong> <t t-esc="student.program_id.name"/></p>
                                     <p class="mb-2"><strong>Batch:</strong> <t t-esc="student.batch_id.name"/></p>
+                                    <!-- The 'Enrollment Date' feature is temporarily disabled pending the Admission module release. -->
                                     <!-- <p class="mb-0"><strong>Enrollment Date:</strong> <t t-esc="student.admission_date" t-options='{"widget": "date"}'/></p> -->
                                 </div>
                             </div>
