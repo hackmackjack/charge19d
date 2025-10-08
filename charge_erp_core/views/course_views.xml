@@ -43,6 +43,9 @@
                             </group>
                         </group>
                         <notebook>
+                            <page string="Faculties">
+                                <field name="faculty_ids" widget="many2many_tags"/>
+                            </page>
                             <page string="Enrollments">
                                 <field name="enrollment_ids">
                                     <list>

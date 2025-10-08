@@ -26,6 +26,8 @@ class OpCourse(models.Model):
     enrollment_ids = fields.One2many(
         'op.course.enrollment', 'course_id',
         string='Enrollments')
+    faculty_ids = fields.Many2many(
+        'op.faculty', 'course_faculty_rel', 'course_id', 'faculty_id', string='Faculties')
     session_count = fields.Integer(
         string='Session Count', compute='_compute_session_count')
 

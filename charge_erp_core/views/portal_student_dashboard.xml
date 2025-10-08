@@ -64,7 +64,7 @@
                                             <t t-foreach="courses" t-as="course">
                                                 <li class="mb-2">
                                                     <strong><t t-esc="course.name"/></strong>
-                                                    <span t-if="course.faculty_id" class="text-muted small"> - <t t-esc="course.faculty_id.name"/></span>
+                                                    <span t-if="course.faculty_ids" class="text-muted small"> - <t t-esc="course.faculty_ids[0].name"/></span>
                                                 </li>
                                             </t>
                                         </ul>
