@@ -2,131 +2,143 @@
 <odoo>
 
     <!--
-      This is the final, definitive template for the student dashboard,
-      following the user's expert guidance. It uses a single, robust xpath
-      to replace the main content area, ensuring an error-free,
-      upgrade-safe, and full-width layout.
+      This template inherits the main portal layout and replaces its
+      content with a mount point for our OWL component. It passes the
+      JSON data from the controller directly to the component.
     -->
     <template id="portal_student_dashboard" name="Portal My Home: Student Dashboard" inherit_id="portal.portal_my_home" priority="99">
-
-        <!-- Replace the entire 'o_portal_my_home' div with our custom dashboard -->
         <xpath expr="//div[hasclass('o_portal_my_home')]" position="replace">
-            <div class="o_portal_my_home">
-                <!-- Full-width dashboard content starts here -->
-                <div class="o_portal_content col-12">
+            <!--
+              Mount point for the OWL Student Dashboard component.
+              The controller provides 'student_dashboard_data' (a JSON string).
+              We pass this string as a 'data' prop to the component.
+            -->
+            <div t-if="student_dashboard_data"
+                 t-component="'charge_erp_core.StudentDashboard'"
+                 t-props='{ "data": student_dashboard_data }'
+                 class="o_portal_my_home"/>
+        </xpath>
+    </template>
 
-                    <!-- Profile Card -->
-                    <div class="card shadow-sm mb-4 text-center">
+    <!--
+      This is the QWeb template for the StudentDashboard OWL component.
+      It defines the complete UI for the new dashboard, using the
+      data passed in through the component's props.
+      The 'owl="1"' attribute marks it as an OWL template.
+    -->
+    <template t-name="charge_erp_core.StudentDashboardTemplate" owl="1">
+        <div class="o_student_dashboard container-fluid p-lg-4 p-2">
+
+            <!-- Profile Section -->
+            <div t-if="state.profile" class="card shadow-sm mb-4 text-center border-0">
+                <div class="card-body p-4">
+                    <img t-att-src="state.profile.image_url" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" alt="Student Profile"/>
+                    <h3 class="mb-1"><t t-esc="state.profile.name"/></h3>
+                    <p class="text-muted mb-2"><t t-esc="state.profile.program"/></p>
+                    <div class="d-flex justify-content-center flex-wrap gap-4 small text-muted mb-3">
+                        <div><i class="fa fa-id-card-o me-1"/> <t t-esc="state.profile.roll_number"/></div>
+                        <div><i class="fa fa-envelope-o me-1"/> <t t-esc="state.profile.email"/></div>
+                        <div><i class="fa fa-phone me-1"/> <t t-esc="state.profile.phone"/></div>
+                    </div>
+                    <a href="/my/details" class="btn btn-light btn-sm border-0 mt-2">
+                        <i class="fa fa-pencil me-1"/> Edit Information
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="row">
+
+                <!-- Left Column -->
+                <div class="col-lg-8">
+                    <!-- Academic Progress -->
+                    <div t-if="state.progress" class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-white pb-0 border-0">
+                            <h5 class="mb-0 fw-bold"><i class="fa fa-line-chart me-2 text-primary"/>Academic Progress</h5>
+                        </div>
                         <div class="card-body">
-                            <img t-att-src="image_data_uri(student.image_1920)" class="rounded-circle mb-3"
-                                 style="width: 120px; height: 120px; object-fit: cover; border: 4px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
-                                 alt="Student Profile"/>
-                            <h3 class="mb-1"><t t-esc="student.name"/></h3>
-                            <p class="text-muted mb-2"><t t-esc="student.program_id.name"/></p>
-                            <div class="d-flex justify-content-center gap-4 small text-muted mb-3">
-                                <div><i class="fa fa-id-card-o me-1"/> <t t-esc="student.roll_number"/></div>
-                                <div><i class="fa fa-envelope-o me-1"/> <t t-esc="student.email"/></div>
-                                <div><i class="fa fa-phone me-1"/> <t t-esc="student.phone"/></div>
+                            <div class="mb-3">
+                                <span class="fw-medium">Course Completion</span>
+                                <div class="progress mt-1" style="height: 20px;">
+                                    <div class="progress-bar" role="progressbar" t-attf-style="width: {{ state.progress.course_completion }}%;" t-att-aria-valuenow="state.progress.course_completion" aria-valuemin="0" aria-valuemax="100">
+                                        <t t-esc="state.progress.course_completion"/>%
+                                    </div>
+                                </div>
                             </div>
-                            <a href="/my/details" class="btn btn-light btn-sm border-0">
-                                <i class="fa fa-pencil me-1"/> Edit Information
-                            </a>
+                            <div>
+                                <span class="fw-medium">Attendance</span>
+                                <div class="progress mt-1" style="height: 20px;">
+                                    <div class="progress-bar bg-success" role="progressbar" t-attf-style="width: {{ state.progress.attendance }}%;" t-att-aria-valuenow="state.progress.attendance" aria-valuemin="0" aria-valuemax="100">
+                                        <t t-esc="state.progress.attendance"/>%
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Dashboard Cards Row -->
-                    <div class="row">
-
-                        <!-- My Academic Info -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow-sm h-100">
-                                <div class="card-header bg-light fw-bold">
-                                    <h5 class="mb-0"><i class="fa fa-graduation-cap me-2 text-primary"/> My Academic Info</h5>
-                                </div>
-                                <div class="card-body">
-                                    <p class="mb-2"><strong>Program:</strong> <t t-esc="student.program_id.name"/></p>
-                                    <p class="mb-2"><strong>Batch:</strong> <t t-esc="student.batch_id.name"/></p>
-                                    <p class="mb-0"><strong>Enrollment Date:</strong> <t t-esc="student.admission_date" t-options='{"widget": "date"}'/></p>
-                                </div>
-                            </div>
+                    <!-- My Courses -->
+                    <div t-if="state.courses" class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-white pb-0 border-0">
+                            <h5 class="mb-0 fw-bold"><i class="fa fa-book me-2 text-primary"/>My Courses</h5>
                         </div>
-
-                        <!-- My Courses -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow-sm h-100">
-                                <div class="card-header bg-light fw-bold">
-                                    <h5 class="mb-0"><i class="fa fa-book me-2 text-primary"/> My Courses</h5>
-                                </div>
-                                <div class="card-body p-3">
-                                    <t t-if="courses">
-                                        <ul class="list-unstyled mb-0">
-                                            <t t-foreach="courses" t-as="course">
-                                                <li class="mb-2">
-                                                    <strong><t t-esc="course.name"/></strong>
-                                                    <span t-if="course.faculty_id" class="text-muted small"> - <t t-esc="course.faculty_id.name"/></span>
-                                                </li>
-                                            </t>
-                                        </ul>
-                                    </t>
-                                    <t t-else="">
-                                        <div class="text-center text-muted p-3">You are not enrolled in any courses.</div>
-                                    </t>
-                                </div>
-                            </div>
+                        <div class="card-body pt-2">
+                            <ul class="list-group list-group-flush">
+                                <t t-if="!state.courses.length">
+                                    <li class="list-group-item text-muted">You are not enrolled in any courses.</li>
+                                </t>
+                                <t t-foreach="state.courses" t-as="course" t-key="course.name">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                                        <span class="fw-medium"><t t-esc="course.name"/></span>
+                                        <span class="text-muted small"><t t-esc="course.faculty"/></span>
+                                    </li>
+                                </t>
+                            </ul>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- My Timetable -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow-sm h-100">
-                                <div class="card-header bg-light fw-bold">
-                                    <h5 class="mb-0"><i class="fa fa-calendar-alt me-2 text-info"/> My Timetable (Next 5)</h5>
-                                </div>
-                                <div class="card-body p-3">
-                                    <t t-if="sessions">
-                                        <ul class="list-unstyled mb-0">
-                                            <t t-foreach="sessions" t-as="session">
-                                                <li class="mb-2">
-                                                    <strong><t t-esc="session.course_id.name"/></strong><br/>
-                                                    <small class="text-muted"><t t-esc="session.start_datetime" t-options='{"widget": "datetime"}'/></small>
-                                                </li>
-                                            </t>
-                                        </ul>
-                                    </t>
-                                    <t t-else="">
-                                        <div class="text-center text-muted p-3">No upcoming sessions.</div>
-                                    </t>
-                                </div>
-                            </div>
+                <!-- Right Column -->
+                <div class="col-lg-4">
+                    <!-- Notifications -->
+                    <div t-if="state.notifications" class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-white pb-0 border-0">
+                            <h5 class="mb-0 fw-bold"><i class="fa fa-bell me-2 text-warning"/>Notifications</h5>
                         </div>
-
-                        <!-- My Library -->
-                        <div class="col-lg-6 mb-4">
-                            <div class="card shadow-sm h-100">
-                                <div class="card-header bg-light fw-bold">
-                                    <h5 class="mb-0"><i class="fa fa-book-reader me-2 text-success"/> My Library</h5>
-                                </div>
-                                <div class="card-body p-3">
-                                    <t t-if="issued_books">
-                                        <ul class="list-unstyled mb-0">
-                                            <t t-foreach="issued_books" t-as="book">
-                                                <li class="mb-2">
-                                                    <strong><t t-esc="book.name"/></strong><br/>
-                                                    <small class="text-muted">Due: <span t-field="book.due_date" t-options='{"widget": "date"}'/></small>
-                                                </li>
-                                            </t>
-                                        </ul>
-                                    </t>
-                                    <t t-else="">
-                                        <div class="text-center text-muted p-3">No books issued.</div>
-                                    </t>
-                                </div>
-                            </div>
+                        <div class="list-group list-group-flush p-2">
+                            <t t-if="!state.notifications.length">
+                                <div class="list-group-item text-muted border-0">No new notifications.</div>
+                            </t>
+                            <t t-foreach="state.notifications" t-as="notif" t-key="notif.id">
+                                <a href="#" class="list-group-item list-group-item-action border-0 rounded mb-1" t-att-class="{ 'bg-light': notif.is_read }">
+                                    <p class="mb-1 small"><t t-esc="notif.message"/></p>
+                                    <small t-if="!notif.is_read" class="text-primary fw-bold">New</small>
+                                </a>
+                            </t>
                         </div>
+                    </div>
 
-                    </div> <!-- end row -->
-                </div><!-- This is now the content of the replaced div -->
+                    <!-- Upcoming Events -->
+                    <div t-if="state.sessions" class="card shadow-sm mb-4 border-0">
+                        <div class="card-header bg-white pb-0 border-0">
+                            <h5 class="mb-0 fw-bold"><i class="fa fa-calendar-alt me-2 text-danger"/>Upcoming Sessions</h5>
+                        </div>
+                        <div class="card-body pt-2">
+                            <ul class="list-unstyled">
+                                <t t-if="!state.sessions.length">
+                                    <li class="text-muted">No upcoming sessions.</li>
+                                </t>
+                                <t t-foreach="state.sessions" t-as="session" t-key="session.course + session.start">
+                                    <li class="mb-2 border-bottom pb-2">
+                                        <strong class="fw-medium"><t t-esc="session.course"/></strong><br/>
+                                        <small class="text-muted"><t t-esc="session.start"/></small>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </xpath>
+        </div>
     </template>
 
 </odoo>

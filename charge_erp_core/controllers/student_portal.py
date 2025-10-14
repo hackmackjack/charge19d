@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 from odoo import http, fields
 from odoo.http import request
 from odoo.addons.portal.controllers.portal import CustomerPortal
@@ -24,17 +25,17 @@ class StudentPortal(CustomerPortal):
         Overrides the default portal homepage to render the new, enhanced
         student dashboard.
 
-        This single method fetches all data required for the dashboard
-        cards and passes it to the custom QWeb template.
+        This single method fetches all data required for the dashboard,
+        serializes it to JSON, and passes it to the QWeb template
+        for the OWL component to consume.
         """
         values = self._prepare_portal_layout_values()
-
         student = self._get_student()
-        faculty = self._get_faculty()
 
         if student:
             # Fetch enrolled courses
-            courses = request.env['op.course.enrollment'].search([('student_id', '=', student.id)]).mapped('course_id')
+            courses = request.env['op.course.enrollment'].search(
+                [('student_id', '=', student.id)]).mapped('course_id')
 
             # Fetch the next 5 upcoming sessions
             sessions = request.env['op.session'].search([
@@ -42,27 +43,57 @@ class StudentPortal(CustomerPortal):
                 ('start_datetime', '>=', fields.Datetime.now())
             ], order='start_datetime asc', limit=5)
 
-            # Fetch issued library books
-            issued_books = request.env['op.book.issue'].search([('student_id', '=', student.id)])
+            # Fetch currently issued library books
+            issued_books = request.env['op.book.issue'].search(
+                [('student_id', '=', student.id), ('state', '=', 'issue')])
 
-            values.update({
-                'student': student,
-                'courses': courses,
-                'sessions': sessions,
-                'issued_books': issued_books,
-            })
+            # Prepare data for serialization
+            dashboard_data = {
+                'profile': {
+                    'name': student.name,
+                    'program': student.program_id.name or 'N/A',
+                    'roll_number': student.roll_number,
+                    'email': student.email,
+                    'phone': student.phone,
+                    'image_url': f'/web/image/op.student/{student.id}/image_1920',
+                },
+                'academics': {
+                    'program': student.program_id.name or 'N/A',
+                    'batch': student.batch_id.name or 'N/A',
+                    'admission_date': fields.Date.to_string(student.admission_date),
+                },
+                'courses': [
+                    {'name': course.name, 'faculty': course.faculty_id.name or 'N/A'}
+                    for course in courses
+                ],
+                'sessions': [
+                    {
+                        'course': session.course_id.name,
+                        'start': fields.Datetime.to_string(session.start_datetime),
+                    }
+                    for session in sessions
+                ],
+                'library': [
+                    {
+                        'name': book.book_id.name,
+                        'due_date': fields.Date.to_string(book.due_date),
+                    }
+                    for book in issued_books
+                ],
+                # Add placeholders for future implementation
+                'notifications': [
+                    {'id': 1, 'message': 'Your fee payment is due next week.', 'is_read': False},
+                    {'id': 2, 'message': 'New materials uploaded for CS101.', 'is_read': True},
+                ],
+                'progress': {
+                    'course_completion': 75,
+                    'attendance': 92,
+                }
+            }
+            values['student_dashboard_data'] = json.dumps(dashboard_data)
 
-        elif faculty:
-            # Fallback for faculty users, can be enhanced later
-            courses = request.env['op.course'].search([('faculty_ids', 'in', [faculty.id])])
-            sessions = request.env['op.session'].search([('faculty_id', '=', faculty.id)])
-            issued_books = request.env['op.book.issue'].search([('faculty_id', '=', faculty.id)])
-
-            values.update({
-                'faculty': faculty,
-                'courses': courses,
-                'sessions': sessions,
-                'issued_books': issued_books,
-            })
+        else:
+            # Fallback for non-student users (e.g., faculty)
+            values['student_dashboard_data'] = json.dumps({})
 
         return request.render("charge_erp_core.portal_student_dashboard", values)

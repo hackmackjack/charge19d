@@ -1,0 +1,131 @@
+/*
+ * Student Dashboard SCSS
+ *
+ * This file contains all custom styles for the new OWL-based student dashboard.
+ * It implements a clean, modern, and responsive design system.
+ */
+
+// 1. Variables
+// ==========================================================================
+$dashboard-bg: #f4f7fc;
+$card-bg: #ffffff;
+$text-color: #495057;
+$text-muted: #6c757d;
+$primary-color: #4a90e2;
+$success-color: #50e3c2;
+$warning-color: #f5a623;
+$danger-color: #d0021b;
+$border-color: #e9ecef;
+$border-radius: 0.75rem;
+$box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+// 2. General Styles
+// ==========================================================================
+body {
+    background-color: $dashboard-bg;
+}
+
+.o_student_dashboard {
+    color: $text-color;
+    font-family: 'Inter', sans-serif; // A modern, clean font
+
+    .card {
+        border: none;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: $card-bg;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+
+            i.fa {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+
+// 3. Component-Specific Styles
+// ==========================================================================
+
+// Profile Card
+.o_student_dashboard .card.text-center .card-body {
+    .rounded-circle {
+        border: 4px solid $primary-color;
+        box-shadow: 0 0 0 4px $card-bg;
+    }
+    h3 {
+        font-weight: 600;
+        color: #343a40;
+    }
+}
+
+// Progress Bars
+.o_student_dashboard .progress {
+    height: 18px !important;
+    border-radius: $border-radius;
+
+    .progress-bar {
+        background-color: $primary-color;
+        color: white;
+        font-weight: 500;
+        font-size: 0.8rem;
+        border-radius: $border-radius;
+        &.bg-success {
+            background-color: $success-color !important;
+        }
+    }
+}
+
+// Lists (Courses, Notifications, Sessions)
+.o_student_dashboard {
+    .list-group-item,
+    .list-unstyled li {
+        padding: 0.8rem 0;
+        border-bottom: 1px solid $border-color;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .list-group-item-action {
+        border-radius: $border-radius * 0.75 !important;
+        border: 1px solid transparent !important;
+        transition: background-color 0.2s, border-color 0.2s;
+        padding: 0.75rem;
+
+        &:hover {
+            background-color: lighten($primary-color, 35%);
+            border-color: lighten($primary-color, 25%) !important;
+        }
+        &.bg-light {
+            background-color: #f8f9fa !important;
+        }
+    }
+}
+
+// 4. Responsive Design
+// ==========================================================================
+@media (max-width: 992px) {
+    .o_student_dashboard {
+        .col-lg-8, .col-lg-4 {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .o_student_dashboard .d-flex.flex-wrap {
+        flex-direction: column;
+        gap: 0.5rem !important;
+    }
+}

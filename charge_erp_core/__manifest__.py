@@ -8,7 +8,7 @@
     'author': 'Charge',
     'website': 'https://www.charge-erp.com',
     'category': 'Education',
-    'depends': ['base', 'mail', 'hr'],
+    'depends': ['base', 'mail', 'hr', 'portal'],
     'data': [
         'security/security.xml',
         'security/student_portal_rules.xml',
@@ -45,6 +45,12 @@
         'demo/student_demo.xml',
         'demo/course_enrollment_demo.xml',
     ],
+    'assets': {
+        'web.assets_frontend': [
+            'charge_erp_core/static/src/scss/student_dashboard.scss',
+            'charge_erp_core/static/src/js/student_dashboard.js',
+        ],
+    },
     'installable': True,
     'application': True,
 }
